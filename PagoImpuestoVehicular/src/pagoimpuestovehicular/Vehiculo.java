@@ -9,13 +9,6 @@ package pagoimpuestovehicular;
  *
  * @author camil
  */
-public class PagoImpuestoVehicular {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Vehiculo {
     
 }
