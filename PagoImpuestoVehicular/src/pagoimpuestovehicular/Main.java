@@ -16,11 +16,8 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    static ArrayList<Vehiculo>lista_vehiculo = new ArrayList<>();
+    
     public static void main(String[] args) {
-        
-    }
-    public Main() {
         Principal_frame principal_frame = new Principal_frame();
         principal_frame.setVisible(true);
     }

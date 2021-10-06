@@ -57,13 +57,6 @@ public class Vehiculo {
         this.codigo = codigo;
     }
 
-    public float getValorF() {
-        return valorF;
-    }
-
-    public void setValorF(float valorF) {
-        this.valorF = valorF;
-    }
     
     
 }
