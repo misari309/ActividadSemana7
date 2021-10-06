@@ -16,6 +16,16 @@ public class Vehiculo {
     private Float valorI;
     private int codigo;
     private float valorF;
+    
+    public Vehiculo(String marca, String linea, String agnio, int codigo, float valor){
+        this.marca = marca;
+        this.linea = linea;
+        this.agnio = agnio;
+        this.codigo = codigo;
+        this.valorI = valorI;
+    }
+    public Vehiculo(){
+    }
 
     public String getMarca() {
         return marca;
