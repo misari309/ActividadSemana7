@@ -5,6 +5,9 @@
  */
 package pagoimpuestovehicular;
 
+import Admin.Admin_frame;
+import Propietario.Propietario_frame;
+
 /**
  *
  * @author camil
@@ -30,21 +33,71 @@ public class Principal_frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btn_admin_frame = new javax.swing.JButton();
+        btn_propietario_frame = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn_admin_frame.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        btn_admin_frame.setText("Admin");
+        btn_admin_frame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_admin_frameActionPerformed(evt);
+            }
+        });
+
+        btn_propietario_frame.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        btn_propietario_frame.setText("Propietario");
+        btn_propietario_frame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_propietario_frameActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic", 0, 18)); // NOI18N
+        jLabel1.setText("Pago de Impuestos ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_propietario_frame, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_admin_frame, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel1)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 344, Short.MAX_VALUE)
+                .addComponent(btn_propietario_frame, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btn_admin_frame, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_propietario_frameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_propietario_frameActionPerformed
+        Propietario_frame propietario_frame = new Propietario_frame();
+        propietario_frame.setVisible(true);
+    }//GEN-LAST:event_btn_propietario_frameActionPerformed
+
+    private void btn_admin_frameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_admin_frameActionPerformed
+        Admin_frame admin_frame = new Admin_frame();
+        admin_frame.setVisible(true);
+    }//GEN-LAST:event_btn_admin_frameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,5 +135,8 @@ public class Principal_frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_admin_frame;
+    private javax.swing.JButton btn_propietario_frame;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
