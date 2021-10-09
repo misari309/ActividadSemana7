@@ -11,7 +11,6 @@ import static java.lang.String.valueOf;
 import java.util.ArrayList;
 import static pagoimpuestovehicular.Principal_frame.lista_vehiculos;
 import pagoimpuestovehicular.Vehiculo;
-import static pagoimpuestovehicular.Principal_frame.desc1;
 
 
 /**

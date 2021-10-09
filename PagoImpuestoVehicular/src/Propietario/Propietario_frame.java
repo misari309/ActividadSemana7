@@ -7,6 +7,8 @@ package Propietario;
 
 import Admin.Admin_frame;
 import javax.swing.JOptionPane;
+import static pagoimpuestovehicular.Principal_frame.lista_vehiculos;
+import static java.lang.String.valueOf;
 
 /**
  *
@@ -17,6 +19,7 @@ public class Propietario_frame extends javax.swing.JFrame {
     
     public Propietario_frame() {
         initComponents();
+        mostrarTabla();
     }
     Admin_frame ap = new Admin_frame();
 
@@ -234,25 +237,7 @@ public class Propietario_frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMarcaActionPerformed
 
     private void btnImprimirComprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirComprobanteActionPerformed
-        Factura ventana = new Factura();
-        //Comprobante ventanaComp = new Comprobante();
-        //setVisible(true);
-        String mensaje = "seleciono la opcion : ";
-        if(boxProntoPago.isSelected()/*&&boxServicioPublico.isSelected()&&boxTransladoDeCuenta.isSelected()*/){
-            mensaje="PRONTO PAGO";
-        }
-        if(boxServicioPublico.isSelected()/*!=boxProntoPago.isSelected()!=boxTransladoDeCuenta.isSelected()*/){
-            mensaje="SERVICIO PÚBLICO";
-        }
-        if(boxTransladoDeCuenta.isSelected()/*!=boxProntoPago.isSelected()!=boxServicioPublico.isSelected()*/){
-            mensaje="TRANSLADO DE CUENTA";
-        }
-        if(boxProntoPago.isSelected()&&boxServicioPublico.isSelected()&&boxTransladoDeCuenta.isSelected()){
-            mensaje="SELECCIONO LOS TRES DESCUENTOS";
-        }
-        //System.out.println(mensaje);
-        //JOptionPane.showMessageDialog(null, "SU FACTURA ES : "+txtAño);
-        ventana.setVisible(true);
+        
         
         
     }//GEN-LAST:event_btnImprimirComprobanteActionPerformed
@@ -263,20 +248,7 @@ public class Propietario_frame extends javax.swing.JFrame {
 
     public static String ma="";
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        try {
-            int codigo = leerCodigo();
-            if(ap.buscar(codigo)!=null){
-            txtMarca.setText(ap.buscar(codigo).getMarca());
-             
-            txtAño.setText(ap.buscar(codigo).getAgnio());
-            txtModelo.setText(ap.buscar(codigo).getLinea());
-            txtValor.setText(""+ap.buscar(codigo).getValorI());
-            
-            ma = txtMarca.getText();
-        }  
-        } catch (Exception e) {
-            //mensaje("INGRESE UN CÓDIGO VÁLIDO");
-        }
+
         
     }//GEN-LAST:event_btnBuscarActionPerformed
     
@@ -315,6 +287,30 @@ public class Propietario_frame extends javax.swing.JFrame {
             public void run() {
                 new Propietario_frame().setVisible(true);
             }
+        });
+    }
+    public void mostrarTabla(){
+        String matriz[][] = new String[lista_vehiculos.size()][10];
+        for(int i=0; i<lista_vehiculos.size();i++){
+            matriz[i][0]=valueOf(lista_vehiculos.get(i).getCodigo());
+            matriz[i][1]=lista_vehiculos.get(i).getMarca();
+            matriz[i][2]=lista_vehiculos.get(i).getLinea();
+            matriz[i][3]=lista_vehiculos.get(i).getAgnio();
+            matriz[i][4]=valueOf(lista_vehiculos.get(i).getValorI());
+
+        }
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            matriz,
+            new String [] {
+                "Código", "Marca", "Línea", "Año", "Valor"
+            } 
+            
+        ){
+            
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return false;
+            };
+            
         });
     }
 

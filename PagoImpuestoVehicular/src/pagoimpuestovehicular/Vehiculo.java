@@ -17,7 +17,7 @@ public class Vehiculo {
     private int codigo;
     private float valorF;
     
-    public Vehiculo(String marca, String linea, String agnio, int codigo, float valor){
+    public Vehiculo(String marca, String linea, String agnio, int codigo, float valorI){
         this.marca = marca;
         this.linea = linea;
         this.agnio = agnio;

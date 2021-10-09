@@ -24,6 +24,10 @@ public class Principal_frame extends javax.swing.JFrame {
         setSize(460, 675);
         setResizable(false);
         setLocationRelativeTo(this);
+
+        lista_vehiculos.add(new Vehiculo("CHEVROLET", "AVEO", "2006", 1, Float.parseFloat("14000")));
+        lista_vehiculos.add(new Vehiculo("RENAULT", "ZOE", "2016", 2, Float.parseFloat("13000")));
+        lista_vehiculos.add(new Vehiculo("NISSAN", "SENTRA", "1995", 3, Float.parseFloat("7000")));
     }
 
     /**
