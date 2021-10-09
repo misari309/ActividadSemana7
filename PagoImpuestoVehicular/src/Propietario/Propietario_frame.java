@@ -20,6 +20,7 @@ public class Propietario_frame extends javax.swing.JFrame {
     public Propietario_frame() {
         initComponents();
         mostrarTabla();
+        setLocationRelativeTo(this);
     }
     Admin_frame ap = new Admin_frame();
 
